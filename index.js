@@ -34,11 +34,11 @@ app.get('/api/:date', (req, res) => {
   // unix input
   if (input.toString().length === 13) {
     date = new Date(input * 1);
-    // invalid input
+    //Error - invalid input
   } else if (date == 'Invalid Date') {
     res.json({ error: 'Invalid Date' });
   }
-
+  // output
   const unixKey = date.getTime();
   var dateString = date.toUTCString();
   res.json({ unix: unixKey, utc: dateString });
