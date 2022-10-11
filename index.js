@@ -18,12 +18,12 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-// your first API endpoint...
+// ### my solution ###
 // empty input
 app.get('/api', (req, res) => {
   date = new Date();
   const unixKey = date.getTime();
-  var dateString = date.toString().split(' ').slice(0, 6).join(' ');
+  var dateString = date.toUTCString();
   res.json({ unix: unixKey, utc: dateString });
 });
 
