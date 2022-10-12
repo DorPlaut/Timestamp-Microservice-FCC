@@ -46,6 +46,6 @@ app.get('/api/:date', (req, res) => {
 
 // listen for requests :)
 // cange port to - process.env.PORT - in the end
-var listener = app.listen(3000, function () {
+var listener = app.listen(process.env.POR || 3000, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
